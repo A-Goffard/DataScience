@@ -1,9 +1,9 @@
 def precioBase(tipo):
     if tipo == "Económico":
         return 150
-    if tipo == "Business":
+    elif tipo == "Business":
         return 250
-    if tipo == "VIP":
+    elif tipo == "VIP":
         return 500
     
 def descuento(edad):
@@ -15,9 +15,9 @@ def descuento(edad):
 def plus(tipo, plus_option):
     if tipo == "Económico" and plus_option == "si":
         return 50
-    if tipo == "Business" and plus_option == "si":
+    elif tipo == "Business" and plus_option == "si":
         return 60
-    if tipo == "VIP":
+    elif tipo == "VIP":
         return 0
     
 def precioTotal(precioBase, descuento, plus):
