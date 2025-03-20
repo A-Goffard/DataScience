@@ -36,27 +36,32 @@ def selecionar_opcion_caso(nombre, edad):
     elif eleccion == "2":
         comprar(nombre, edad)
     else:
-        salir
+        print("¡Hasta luego!")
     return eleccion
 
 def sorteo():
     lista_nombres = ["Sonia", "Ignacio", "Alain", "Ysaias", "Nico", "Iñigo", "Angelina", "Ander", "Ángel", "Javier", "Luis Miguel", "Alex", "Ainara", "Aintzane"]
 
     lista_boletos = []
+    diccionario_sorteo = {}
     contador = 0
     
     while contador < 14:
-        numero_random = randint(1,14)
+        numero_random = randint(1, 14)
         if numero_random in lista_boletos:
             pass
         else:
             lista_boletos.append(numero_random)
+            diccionario_sorteo[lista_nombres[contador]] = numero_random
             contador += 1
-    print(lista_boletos)
-    
-    
-    
         
+    numero_ganador = randint(1, 14)
+    ganador = [nombre for nombre, numero in diccionario_sorteo.items() if numero == numero_ganador]
+    
+    if ganador:
+        print(f"El ganador del viaje es: {ganador[0]} con el número {numero_ganador}")
+    else:
+        print("No se ha encontrado un ganador.")
     
 def seleccionar_tipo_viaje():
     print("¿En qué modalidad te gustaría contratar el viaje?")
@@ -111,9 +116,6 @@ def comprar(nombre, edad):
 def main():
     nombre, edad = datos_cliente()
     selecionar_opcion_caso(nombre, edad)
-        
-        
-
 
 if __name__ == "__main__": 
     main()
