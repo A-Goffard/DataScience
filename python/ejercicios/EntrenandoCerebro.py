@@ -214,10 +214,24 @@
 
 # Algoritmo: 
 
+# para todos los números for
+# < 2 y % de cualquier número != 0 --> primo, print
 
 # """
-# # Código En Python
+# Código En Python
 
+# def es_primo(n):
+#     if n < 2:
+#         return False
+
+#     for i in range(2, n):
+#         if n % i == 0:
+#             return False
+#     return True
+
+# for j in range(1, 100):
+#     if es_primo(j):
+#         print(j)
 
 # """
 # 9)
@@ -229,13 +243,47 @@
 
 # Algoritmo: 
 
-# xxxxx
+# matriz
+# x e y de la matriz
+# dentro de x len
+# len[x]
+# if numero en posicion xy print
 
 # """
 # # Código En Python
 
+# def buscar_numero(matriz,numero):
+#     for x in range(len(matriz)):
+#         for y in range(len(matriz[x])):
+#             if matriz[x][y] == numero:
+#                 return (x,y)
+#     return None
 
+# # def buscar_numero(matriz, numero):
+# #     x = 0
+# #     while x < len(matriz):
+# #         y = 0
+# #         while y < len(matriz[x]):
+# #             if matriz[x][y] == numero:
+# #                 return (x, y)
+# #             y += 1
+# #         x += 1
+# #     return None
+# # Ejemplo de uso
+# matriz = [
+#     [1, 2, 3, 4, 5],
+#     [6, 7, 8, 9, 10],
+#     [11, 12, 13, 14, 15],
+#     [16, 17, 18, 19, 20],
+#     [21, 22, 23, 24, 25]
+# ]
+# numero_a_buscar = int(input("Introduce el número a buscar: "))
+# resultado = buscar_numero(matriz, numero_a_buscar)
 
+# if resultado:
+#     print(f"El número {numero_a_buscar} se encuentra en la posición {resultado}")
+# else:
+#     print(f"El número {numero_a_buscar} no se encuentra en la matriz")
 
 # """
 # 10)
@@ -247,13 +295,33 @@
 
 # Algoritmo: 
 
-# xxxxx
+# matriz x*y
+# sumar principal x1y1 + x2y2 + ....xiyi
+# sumar secundaria xleny1 + xlen-1y2 + ...x1yi
 
 # """
-# # Código En Python
+# Código En Python
 
+# def suma_diagonal(matriz):
+#     n = len(matriz)
+#     suma_diagonal_principal = 0
+#     suma_diagonal_secundaria = 0
+    
+#     for i in range(n):
+#         suma_diagonal_principal += matriz[i][i]
+#         suma_diagonal_secundaria += matriz [i][n-1-i]
+#     return suma_diagonal_principal, suma_diagonal_secundaria
 
-
+# matriz = [
+#     [1, 2, 3, 4, 5],
+#     [6, 7, 8, 9, 10],
+#     [11, 12, 13, 14, 15],
+#     [16, 17, 18, 19, 20],
+#     [21, 22, 23, 24, 25]
+# ]
+# suma_diagonal_principal, suma_diagonal_secundaria = suma_diagonal(matriz)
+# print(f"Suma de la diagonal principal: {suma_diagonal_principal}")
+# print(f"Suma de la diagonal secundaria: {suma_diagonal_secundaria}")
 # """
 # 11)
 
@@ -403,46 +471,59 @@
 # Algoritmo: 
 
 # input(palabra)
-# if palabra == palabra alreves
+# si palabra == palabra alreves
 #     print("Es palíndromo")
-# else
+# sino
 #     print("No es palíndromo")
 
 # """
 # # Código En Python
 
 # def es_palindromo(palabra):
-#     if palabra == palabra[::-1]:
-#         print("Es palíndromo")
-#     else:
-#         print("No es palíndromo")
-
-# palabra = input("Escribe una palabra para ver si es palíndromo: ")
+#     longitud = len(palabra)
+#     for i in range(longitud // 2):
+#         if palabra[i] != palabra[longitud-1-i]:
+#             print("No es palíndromo")
+#             return
+#     print("Es palíndromo")
 
 # def main():
+#     palabra = input("Escribe una palabra para ver si es palíndromo: ")
 #     es_palindromo(palabra)  
 
 # if __name__ == "__main__":
 #     main()
 
 
-"""
-14)
+# """
+# 14)
 
-Enunciado:
+# Enunciado:
 
-Ordenamiento de Burbuja: Implementa el algoritmo de ordenamiento de
-burbuja para ordenar una lista de números enteros de forma ascendente.
+# Ordenamiento de Burbuja: Implementa el algoritmo de ordenamiento de
+# burbuja para ordenar una lista de números enteros de forma ascendente.
 
-Algoritmo: 
+# Algoritmo: 
 
-xxxxx
+# lista
+# for numeros en lista pasadas
+# comparar numeros [1][2], si 2 > 1 los intercambia
+# comparar numeros [2][3], si 3 > 2 intercambia
+# ....
 
-"""
-# Código En Python
 
+# """
+# # Código En Python
 
-
+# def ordenar_lista(lista):
+#     longitud_lista = len(lista)
+#     for i in range(longitud_lista):
+#         for j in range(0, longitud_lista-1-i):
+#             if lista[j] > lista[j+1]:
+#                 lista[j], lista[j+1] = lista[j+1], lista[j]
+# lista = [64, 34, 25, 12, 22, 11, 90]
+# ordenar_lista(lista)
+# print("Lista ordenada: ", lista)
 
 """
 15)
