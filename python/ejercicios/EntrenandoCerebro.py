@@ -525,146 +525,303 @@
 # ordenar_lista(lista)
 # print("Lista ordenada: ", lista)
 
-"""
-15)
+# """
+# 15)
 
-Enunciado:
+# Enunciado:
 
-Búsqueda Binaria: Escribe una función que realice una búsqueda binaria en
-una lista ordenada de números enteros.
+# Búsqueda Binaria: Escribe una función que realice una búsqueda binaria en
+# una lista ordenada de números enteros.
 
-Algoritmo: 
+# Algoritmo: 
 
-xxxxx
+# lista
+# numero
+# longitud lista
+# medio -> longitud_lista/2
+# mientras i < fin 
+# si medio es igual a número --> ok
+# si medio > numero --> medio - 1
+# si medio < numero --> medio + 1
 
-"""
-# Código En Python
+# """
+# # Código En Python
 
+# def busqueda_binaria(lista, numero):
+#     inicio = 0
+#     fin = len(lista) - 1
 
+#     while inicio <= fin:
+#         medio = (inicio + fin) // 2
+#         if lista[medio] == numero:
+#             return medio
+#         elif lista[medio] < numero:
+#             inicio = medio + 1
+#         else:
+#             fin = medio - 1
 
+#     return -1
 
+# # Ejemplo de uso
+# lista_numero = [1, 3, 5, 7, 9, 11, 13]
+# numero = 5
+# resultado = busqueda_binaria(lista_numero, numero)
 
-"""
-16)
+# if resultado != -1:
+#     print(f"El número {numero} se encuentra en el índice {resultado}.")
+# else:
+#     print(f"El número {numero} no está en la lista.")
 
-Enunciado:
+# """
+# 16)
 
-Detección de Anagramas: Crea una función que determine si dos cadenas de
-texto son anagramas (contienen las mismas letras en diferente orden).
+# Enunciado:
 
-Algoritmo: 
+# Detección de Anagramas: Crea una función que determine si dos cadenas de
+# texto son anagramas (contienen las mismas letras en diferente orden).
 
-input(palabra1)
-input(palabra2)
-if palabra1 contenido == palabra2 contenido
-    print("Son anagramas")
-else
-    print("No son anagramas")
+# Algoritmo: 
 
-"""
-# Código En Python
+# input(palabra1)
+# input(palabra2)
+# if palabra1 contenido == palabra2 contenido
+#     print("Son anagramas")
+# else
+#     print("No son anagramas")
 
-def son_anagramas(palabra1, palabra2):
-    if len(palabra1) != len(palabra2):
-        print("No son anagramas")
-        return
+# """
+# # Código En Python
+
+# def son_anagramas(palabra1, palabra2):
+#     if len(palabra1) != len(palabra2):
+#         print("No son anagramas")
+#         return
     
-    dicConteo1 = {}
-    dicConteo2 = {}
+#     dicConteo1 = {}
+#     dicConteo2 = {}
     
-    for letra in palabra1:
-        if letra in dicConteo1:
-            dicConteo1[letra] += 1
-        else:
-            dicConteo1[letra] = 1
+#     for letra in palabra1:
+#         if letra in dicConteo1:
+#             dicConteo1[letra] += 1
+#         else:
+#             dicConteo1[letra] = 1
     
-    for letra in palabra2:
-        if letra in dicConteo2:
-            dicConteo2[letra] += 1
-        else:
-            dicConteo2[letra] = 1
+#     for letra in palabra2:
+#         if letra in dicConteo2:
+#             dicConteo2[letra] += 1
+#         else:
+#             dicConteo2[letra] = 1
     
-    if dicConteo1 == dicConteo2:
-        print("Son anagramas")
-    else:
-        print("No son anagramas")
+#     if dicConteo1 == dicConteo2:
+#         print("Son anagramas")
+#     else:
+#         print("No son anagramas")
 
-def main():
-    palabra1 = input("Escribe una palabra ")
-    palabra2 = input("Escribe otra palabra ")
-    son_anagramas(palabra1, palabra2)
+# def main():
+#     palabra1 = input("Escribe una palabra ")
+#     palabra2 = input("Escribe otra palabra ")
+#     son_anagramas(palabra1, palabra2)
     
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 
 
-"""
-17)
+# """
+# 17)
 
-Enunciado:
+# Enunciado:
 
-Sucesión de Fibonacci: Diseña una función que genere los primeros n números
-de la sucesión de Fibonacci.
+# Sucesión de Fibonacci: Diseña una función que genere los primeros n números
+# de la sucesión de Fibonacci.
 
-Algoritmo: 
+# Algoritmo: 
 
-xxxxx
-
-"""
-# Código En Python
-
-
-
-
-
-"""
-18)
-
-Enunciado:
-
-Validación de Email: Escribe una función que valide si una dirección de correo
-electrónico tiene un formato válido.
-
-Algoritmo: 
-
-xxxxx
-
-"""
-# Código En Python
+# cantidad de secuencia = n
+# n <= o --> secuencia[]
+# n == 1 --> secuencia[0]
+# n == 2 --> secuencia[0,1]
+# bucle i rango desde 2 a n
+# siguiente = secuencia[-1]+secuencia[-2]
+# append a la secuencia
+# print secuencia
 
 
+# """
+# # Código En Python
 
-"""
-19)
+# def fibonacci(n):
+#     if n <= 0:
+#         return []
+#     elif n == 1:
+#         return [0]
+#     elif n == 2:
+#         return [0, 1]
+    
+#     secuencia = [0, 1]
+#     for i in range(2, n):
+#         siguiente = secuencia[-1] + secuencia[-2]
+#         secuencia.append(siguiente)
+    
+#     return secuencia
 
-Enunciado:
-
-Análisis de Texto: Crea un programa que analice un texto dado y cuente la
-frecuencia de cada palabra.
-
-Algoritmo: 
-
-xxxxx
-
-"""
-# Código En Python
-
-
-"""
-20)
-
-Enunciado:
-
-Juego de Adivinanza: Diseña un juego en el que el ordenador elige un número
-aleatorio y el usuario tiene que adivinarlo. Proporciona pistas como "más alto" o
-"más bajo" según la suposición del usuario.
-
-Algoritmo: 
-
-xxxxx
-
-"""
-# Código En Python
+# # Ejemplo de uso
+# n = int(input("Introduce el número de términos de la sucesión de Fibonacci que deseas generar: "))
+# secuencia = fibonacci(n)
+# print(f"Los primeros {n} números de la sucesión de Fibonacci son: {secuencia}")
 
 
+
+# """
+# 18)
+
+# Enunciado:
+
+# Validación de Email: Escribe una función que valide si una dirección de correo
+# electrónico tiene un formato válido.
+
+# Algoritmo: 
+
+# email 
+
+# si @ > 1 mal
+# parte1 @ dominio
+# buscar . no final ni principio de dominio
+
+# """
+# # Código En Python
+
+# def validar_email(correo):
+#     # Verificar que haya exactamente un '@'
+#     cuenta_arroba = 0
+#     for caracter in correo:
+#         if caracter == '@':
+#             cuenta_arroba += 1
+#     if cuenta_arroba != 1:
+#         return False
+    
+#     # Dividir la dirección en la parte local y el dominio
+#     indice_arroba = 0
+#     for i in range(len(correo)):
+#         if correo[i] == '@':
+#             indice_arroba = i
+#             # No usamos break, pero salimos del bucle al encontrar el '@'
+#             i = len(correo)
+    
+#     parte_local = correo[:indice_arroba]
+#     dominio = correo[indice_arroba+1:]
+    
+#     # Verificar que la parte local y el dominio no estén vacíos
+#     if len(parte_local) == 0 or len(dominio) == 0:
+#         return False
+    
+#     # Verificar que el dominio contenga al menos un '.'
+#     punto_encontrado = False
+#     for caracter in dominio:
+#         if caracter == '.':
+#             punto_encontrado = True
+#     if not punto_encontrado:
+#         return False
+    
+#     # Verificar que el '.' no esté al principio o al final del dominio
+#     if dominio[0] == '.' or dominio[-1] == '.':
+#         return False
+    
+#     return True
+
+# # Ejemplo de uso
+# correo = input("Escribe el correo a validar: ")
+# if validar_email(correo):
+#     print("El correo es válido.")
+# else:
+#     print("El correo no es válido.")
+    
+# """
+# 19)
+
+# Enunciado:
+
+# Análisis de Texto: Crea un programa que analice un texto dado y cuente la
+# frecuencia de cada palabra.
+
+# Algoritmo: 
+
+# input texto
+# dividir en palabras
+# crear dic para frecuencia
+# iterar palabras y actualizar dic
+# imprimir frec
+
+# """
+# # Código En Python
+
+# def contar_frecuencia_palabras(texto):
+#     # Dividir el texto en palabras
+#     palabras = texto.split()
+    
+#     # Crear un diccionario para almacenar la frecuencia de cada palabra
+#     frecuencia = {}
+    
+#     # Iterar a través de las palabras y actualizar el diccionario
+#     for palabra in palabras:
+#         if palabra in frecuencia:
+#             frecuencia[palabra] += 1
+#         else:
+#             frecuencia[palabra] = 1
+    
+#     return frecuencia
+
+# # Ejemplo de uso
+# texto = input("Introduce un texto: ")
+# frecuencia_palabras = contar_frecuencia_palabras(texto)
+
+# print("Frecuencia de cada palabra:")
+# for palabra, frecuencia in frecuencia_palabras.items():
+#     print(f"{palabra}: {frecuencia}")
+
+# """
+# 20)
+
+# Enunciado:
+
+# Juego de Adivinanza: Diseña un juego en el que el ordenador elige un número
+# aleatorio y el usuario tiene que adivinarlo. Proporciona pistas como "más alto" o
+# "más bajo" según la suposición del usuario.
+
+# Algoritmo: 
+
+# numero random
+# imput adivina
+# if adivina > numero --> print "más bajo"
+# if adivina < numero --> print "más alto"
+# if == --> ¡Acertaste!
+
+# """
+# # Código En Python
+# import random
+
+# def juego_adivinanza():
+#     # El ordenador elige un número aleatorio entre 1 y 100
+#     numero_aleatorio = random.randint(1, 101)
+#     intentos = 0
+    
+#     print("¡Bienvenido al juego de adivinanza!")
+#     print("He elegido un número entre 1 y 100. Intenta adivinarlo.")
+    
+#     while True:
+#         # Solicitar al usuario que introduzca su suposición
+#         suposicion = int(input("Introduce tu suposición: "))
+#         intentos += 1
+        
+#         # Proporcionar pistas
+#         if suposicion < numero_aleatorio:
+#             print("Más alto")
+#         elif suposicion > numero_aleatorio:
+#             print("Más bajo")
+#         else:
+#             print(f"¡Felicidades! Has adivinado el número en {intentos} intentos.")
+#             break
+
+# # Ejecutar el juego
+# juego_adivinanza()
+    
