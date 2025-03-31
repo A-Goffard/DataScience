@@ -1,6 +1,6 @@
 class Usuario:
 
-    def __init__(self, id, nombre, apellido, correo, telefono, fecha_nacimiento, direccion, dni, cp, poblacion, pais, rol, preferencias):
+    def __init__(self, id, nombre, apellido, correo, telefono, fecha_nacimiento, direccion, dni, cp, poblacion, pais, como_conocer, numero_personas_juntas):
         self.id = id
         self.nombre = nombre
         self.apellido = apellido
@@ -12,8 +12,8 @@ class Usuario:
         self.cp = cp
         self.poblacion = poblacion
         self.pais = pais
-        self.rol = rol
-        self.preferencias = preferencias
+        self.como_conocer = como_conocer
+        self.numero_personas_juntas = numero_personas_juntas
 
     @property
     def dni(self):
@@ -93,17 +93,16 @@ class Usuario:
         self.fecha_nacimiento = fecha_nacimiento
 
     @property
-    def rol(self):
-        return self.rol
-    @rol.setter
-    def rol(self, rol):
-        self.rol = rol
+    def como_conocer(self):
+        return self.como_conocer
+    @como_conocer.setter
+    def como_conocer(self, como_conocer):
+        self.como_conocer = como_conocer
 
     @property
-    def preferencias(self):
-        return self.preferencias
-    @preferencias.setter
-    def preferencias(self, preferencias):
-        self.preferencias = preferencias
-
+    def numero_personas_juntas(self):
+        return self.numero_personas_juntas
+    @numero_personas_juntas.setter
+    def numero_personas_juntas(self, numero_personas_juntas):
+        self.numero_personas_juntas = numero_personas_juntas
 

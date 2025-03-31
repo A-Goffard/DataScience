@@ -548,32 +548,32 @@
 # # Código En Python
 
 
-# def buscar_binario (numero):
-#     lista = [1, 5, 7, 25, 65, 98, 125]
-#     longitud = len(lista)
-#     inicio = 0
-#     fin = longitud-1
+def buscar_binario (numero):
+    lista = [1, 5, 7, 25, 65, 98, 125]
+    longitud = len(lista)
+    inicio = 0
+    fin = longitud-1
     
-#     while inicio <= fin:
-#         medio = (inicio + fin) // 2
+    while inicio <= fin:
+        medio = (inicio + fin) // 2
         
-#         if lista[medio] == numero:
-#             print(f"El número {numero} se encuentra en la posición: {medio}")
-#             return
-#         elif lista[medio] < numero:
-#             inicio = medio + 1
-#         else:
-#             fin = medio - 1
+        if lista[medio] == numero:
+            print(f"El número {numero} se encuentra en la posición: {medio}")
+            return
+        elif lista[medio] < numero:
+            inicio = medio + 1
+        else:
+            fin = medio - 1
         
     
-#     print(f"No se ha encontrado el {numero} en la lista")
+    print(f"No se ha encontrado el {numero} en la lista")
     
-# def main():
-#     numero = int(input("Introduce el número a buscar: "))
-#     buscar_binario(numero)
+def main():
+    numero = int(input("Introduce el número a buscar: "))
+    buscar_binario(numero)
     
-# if __name__ == "__main__":
-#     main()    
+if __name__ == "__main__":
+    main()    
 
 
 # """
