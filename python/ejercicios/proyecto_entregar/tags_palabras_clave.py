@@ -2,7 +2,7 @@ class Tag:
     def __init__(self, id, palabra_clave, categoria, frecuencia_uso, relaciones):
         self._id = id
         self._palabra_clave = palabra_clave
-        self._categoria = categoria  # e.g., "temática", "actividad", etc.
+        self._categoria = categoria 
         self._frecuencia_uso = frecuencia_uso
         self._relaciones = relaciones
 

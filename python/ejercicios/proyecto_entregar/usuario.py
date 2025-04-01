@@ -106,4 +106,164 @@ class Usuario:
     def preferencias(self, preferencias):
         self.preferencias = preferencias
 
+    def agregar_participante(self, participante):
+        """Agrega un participante a la lista de participantes."""
+        # Implementación para agregar un participante
+        pass
+
+    def modificar_participante(self, id_participante, nuevos_datos):
+        """Modifica los datos de un participante existente."""
+        # Implementación para modificar un participante
+        pass
+
+    def buscar_participante(self, id_participante):
+        """Busca un participante por su ID."""
+        # Implementación para buscar un participante
+        pass
+
+    def eliminar_participante(self, id_participante):
+        """Elimina un participante por su ID."""
+        # Implementación para eliminar un participante
+        pass
+
+    def agregar_actividad(self, actividad):
+        """Agrega una actividad a la lista de actividades."""
+        # Implementación para agregar una actividad
+        pass
+
+    def modificar_actividad(self, id_actividad, nuevos_datos):
+        """Modifica los datos de una actividad existente."""
+        # Implementación para modificar una actividad
+        pass
+
+    def buscar_actividad(self, id_actividad):
+        """Busca una actividad por su ID."""
+        # Implementación para buscar una actividad
+        pass
+
+    def eliminar_actividad(self, id_actividad):
+        """Elimina una actividad por su ID."""
+        # Implementación para eliminar una actividad
+        pass
+
+    def agregar_documento(self, documento):
+        """Agrega un documento a la lista de documentos."""
+        # Implementación para agregar un documento
+        pass
+
+    def modificar_documento(self, id_documento, nuevos_datos):
+        """Modifica los datos de un documento existente."""
+        # Implementación para modificar un documento
+        pass
+
+    def buscar_documento(self, id_documento):
+        """Busca un documento por su ID."""
+        # Implementación para buscar un documento
+        pass
+
+    def eliminar_documento(self, id_documento):
+        """Elimina un documento por su ID."""
+        # Implementación para eliminar un documento
+        pass
+
+    def agregar_tema_ambiental(self, tema):
+        """Agrega un tema ambiental a la lista de temas."""
+        # Implementación para agregar un tema ambiental
+        pass
+
+    def modificar_tema_ambiental(self, id_tema, nuevos_datos):
+        """Modifica los datos de un tema ambiental existente."""
+        # Implementación para modificar un tema ambiental
+        pass
+
+    def buscar_tema_ambiental(self, id_tema):
+        """Busca un tema ambiental por su ID."""
+        # Implementación para buscar un tema ambiental
+        pass
+
+    def eliminar_tema_ambiental(self, id_tema):
+        """Elimina un tema ambiental por su ID."""
+        # Implementación para eliminar un tema ambiental
+        pass
+
+    def agregar_plantilla(self, plantilla):
+        """Agrega una plantilla a la lista de plantillas."""
+        # Implementación para agregar una plantilla
+        pass
+
+    def modificar_plantilla(self, id_plantilla, nuevos_datos):
+        """Modifica los datos de una plantilla existente."""
+        # Implementación para modificar una plantilla
+        pass
+
+    def buscar_plantilla(self, id_plantilla):
+        """Busca una plantilla por su ID."""
+        # Implementación para buscar una plantilla
+        pass
+
+    def eliminar_plantilla(self, id_plantilla):
+        """Elimina una plantilla por su ID."""
+        # Implementación para eliminar una plantilla
+        pass
+
+    def agregar_recurso_multimedia(self, recurso):
+        """Agrega un recurso multimedia a la lista de recursos."""
+        # Implementación para agregar un recurso multimedia
+        pass
+
+    def modificar_recurso_multimedia(self, id_recurso, nuevos_datos):
+        """Modifica los datos de un recurso multimedia existente."""
+        # Implementación para modificar un recurso multimedia
+        pass
+
+    def buscar_recurso_multimedia(self, id_recurso):
+        """Busca un recurso multimedia por su ID."""
+        # Implementación para buscar un recurso multimedia
+        pass
+
+    def eliminar_recurso_multimedia(self, id_recurso):
+        """Elimina un recurso multimedia por su ID."""
+        # Implementación para eliminar un recurso multimedia
+        pass
+
+    def agregar_tag_palabra_clave(self, tag):
+        """Agrega un tag o palabra clave a la lista."""
+        # Implementación para agregar un tag o palabra clave
+        pass
+
+    def modificar_tag_palabra_clave(self, id_tag, nuevos_datos):
+        """Modifica los datos de un tag o palabra clave existente."""
+        # Implementación para modificar un tag o palabra clave
+        pass
+
+    def buscar_tag_palabra_clave(self, id_tag):
+        """Busca un tag o palabra clave por su ID."""
+        # Implementación para buscar un tag o palabra clave
+        pass
+
+    def eliminar_tag_palabra_clave(self, id_tag):
+        """Elimina un tag o palabra clave por su ID."""
+        # Implementación para eliminar un tag o palabra clave
+        pass
+
+    def agregar_publicacion(self, publicacion):
+        """Agrega una publicación a la lista de publicaciones."""
+        # Implementación para agregar una publicación
+        pass
+
+    def modificar_publicacion(self, id_publicacion, nuevos_datos):
+        """Modifica los datos de una publicación existente."""
+        # Implementación para modificar una publicación
+        pass
+
+    def buscar_publicacion(self, id_publicacion):
+        """Busca una publicación por su ID."""
+        # Implementación para buscar una publicación
+        pass
+
+    def eliminar_publicacion(self, id_publicacion):
+        """Elimina una publicación por su ID."""
+        # Implementación para eliminar una publicación
+        pass
+
 
