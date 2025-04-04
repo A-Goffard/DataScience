@@ -1,6 +1,7 @@
 class Actividad:
-    def __init__(self, id, nombre, fecha_ejecucion, descripcion, responsable, duracion, coste_economico, coste_horas, facturacion, resultados, valoracion, modificaciones):
+    def __init__(self, id, tipo, nombre, fecha_ejecucion, descripcion, responsable, duracion, coste_economico, coste_horas, facturacion, resultados, valoracion, modificaciones):
         self._id = id
+        self._tipo = tipo
         self._nombre = nombre
         self._fecha_ejecucion = fecha_ejecucion
         self._descripcion = descripcion
@@ -17,6 +18,14 @@ class Actividad:
     def id(self):
         return self._id
 
+    @property
+    def tipo(self):
+        return self._tipo
+
+    @tipo.setter
+    def tipo(self, tipo):
+        self.tipo = tipo
+        
     @property
     def nombre(self):
         return self._nombre
