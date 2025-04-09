@@ -1,10 +1,12 @@
 from coche import Coche
-from listaCoches import ListaCoches
+from listaparking import ListaCoches
 from gestionCobros import GestionCobros
 
 class Menu:
     def __init__(self):
         self.parking = ListaCoches()
+        self.GestionCobros = GestionCobros()
+
     
     def mostrar_menu(self):
         while True:
@@ -20,7 +22,7 @@ class Menu:
             elif opcion == "2":
                 self.eliminar_coche()
             elif opcion == "3":
-                self.coches.llamar_grua()
+                self.llamar_grua()
             elif opcion == "4":
                 print("Saliendo del programa...")
                 break
@@ -32,12 +34,13 @@ class Menu:
         marca = input("Marca del coche: ")
         color = input("Color del coche: ")
         tipo = input("Tipo de coche: ")
+        hora_entrada = input("Inserta la hora de entrada: ")
         nuevo_coche = Coche(matricula, marca, color, tipo)
-        self.coches.anadir_coche(nuevo_coche)
+        self.parking.anadir_coche(nuevo_coche, hora_entrada)
 
     def buscar_coche(self):
         matricula = input("Matrícula del coche a buscar: ")
-        coche = self.coches.buscar_coche(matricula)
+        coche = self.parking.buscar_coche(matricula)
         if coche:
             print(f"Coche encontrado: matricula: {coche.matricula}, Marca: {coche.marca}, Color: {coche.color}, Tipo: {coche.tipo}")
             return coche
@@ -46,11 +49,19 @@ class Menu:
 
     def eliminar_coche(self):
         matricula = input("Matrícula del coche a eliminar: ")
-        self.coches.eliminar_coche(matricula)
-
+        if matricula in self.GestionCobros.lista_cobros:
+            resultado_cobro = self.GestionCobros.calcularPrecio(matricula)
+            if resultado_cobro > 0: 
+                self.parking.eliminar_coche(matricula)
+                print(f"Coche con matrícula {matricula} eliminado tras realizar el cobro de {resultado_cobro}.")
+            else:
+                print("No se pudo realizar el cobro. El coche no será eliminado.")
+        else:
+            print("Coche no encontrado en la lista de cobros.")
+        
     def llamar_grua(self):
         matricula = input("Matrícula del coche que se ha de llevar la grua: ")
-        self.coches.eliminar_coche(matricula)
+        self.parking.eliminar_coche(matricula)
 
 if __name__ == "__main__":
     menu = Menu()
