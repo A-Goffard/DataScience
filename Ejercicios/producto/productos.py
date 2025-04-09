@@ -4,7 +4,7 @@ class Productos:
         self.lista_productos = []
 
     def anadir_producto(self, producto):
-        if not existe_producto (producto.id):
+        if not self.existe_producto(producto.id):
             self.lista_productos.append(producto)
             print("Producto añadido!!")
         else:
@@ -33,8 +33,10 @@ class Productos:
                 print("El producto no existe")
 
     def mostrar_lista_productos(self):
-        if not self.lista_productos:
+        if  len(self.lista_productos)==0:
             print("La lista está vacía")
         else:
             for producto in self.lista_productos:
-                print(producto)
+                print(producto.id,"-", producto.nombre,"-", producto.precio,"-",  producto.descripcion)
+                
+    
