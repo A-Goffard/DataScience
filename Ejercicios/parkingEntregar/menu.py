@@ -49,15 +49,18 @@ class Menu:
 
     def eliminar_coche(self):
         matricula = input("Matrícula del coche a eliminar: ")
-        if matricula in self.GestionCobros.lista_cobros:
-            resultado_cobro = self.GestionCobros.calcularPrecio(matricula)
-            if resultado_cobro > 0: 
+        hora_salida = int(input("Inserta la hora de salida: "))
+        coche = self.parking.buscar_coche(matricula)
+        if coche:
+            hora_entrada = self.parking.obtener_hora_entrada(matricula)  # Método para obtener la hora de entrada
+            resultado_cobro = self.GestionCobros.crearCobro(0, matricula, hora_entrada, hora_salida)
+            if resultado_cobro > 0:
                 self.parking.eliminar_coche(matricula)
                 print(f"Coche con matrícula {matricula} eliminado tras realizar el cobro de {resultado_cobro}.")
             else:
                 print("No se pudo realizar el cobro. El coche no será eliminado.")
         else:
-            print("Coche no encontrado en la lista de cobros.")
+            print("Coche no encontrado.")
         
     def llamar_grua(self):
         matricula = input("Matrícula del coche que se ha de llevar la grua: ")

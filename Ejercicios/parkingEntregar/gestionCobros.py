@@ -13,7 +13,7 @@ class GestionCobros:
     def calcularPrecio(self, horaEntrada, horaSalida):
         tiempoTotal = horaSalida - horaEntrada
         precio = tiempoTotal * self.precioHora
-        return self.calcularBono(self,precio, horaEntrada, horaSalida)    
+        return self.calcularBono(precio, horaEntrada, horaSalida)    
 
     def calcularBono(self, precio, horaEntrada, horaSalida):
         
@@ -32,4 +32,4 @@ class GestionCobros:
 
     def avisoMAX(self):
         print("El tiempo máximo de estancia es de 48 horas. Por favor, retire el coche.")
-        return False    
+        return False
