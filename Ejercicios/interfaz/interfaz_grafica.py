@@ -2,14 +2,15 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from ListaCoches import ListaCoches
 from coche import Coche
-import tkinter as tk  # Import tkinter y alias como tk
+import tkinter as tk  
+from tkinter import messagebox
 
 class InterfazGrafica:
 	def __init__(self, root):
 		self.lista_coches = ListaCoches()
 		self.root = root
 		self.root.title("Gestión de Coches")
-		self.root.geometry("500x500")
+		self.root.geometry("355x550")
 
 		# Campos de entrada
 		self.matricula_label = ttk.Label(root, text="Matrícula:", bootstyle="primary")
@@ -51,7 +52,7 @@ class InterfazGrafica:
 		self.mostrar_button.grid(row=6, column=1, padx=10, pady=10)
 
 		# Área de texto para mostrar resultados
-		self.resultado_text = tk.Text(root, height=10, width=50)  # Cambia ttk.Text a tk.Text y elimina bootstyle
+		self.resultado_text = tk.Text(root, height=10, width=40)  # Cambia ttk.Text a tk.Text y elimina bootstyle
 		self.resultado_text.grid(row=7, column=0, columnspan=2, padx=10, pady=10)
 
 	def anadir_coche(self):
@@ -71,12 +72,16 @@ class InterfazGrafica:
 	def eliminar_coche(self):
 		matricula = self.matricula_entry.get()
 		if matricula:
-			coche = self.lista_coches.buscar_coche(matricula)
-			if coche:
-				self.lista_coches.eliminar_coche(matricula)
-				self.resultado_text.insert(tk.END, f"Coche con matrícula {matricula} eliminado.\n")
+			respuesta = messagebox.askyesno("Confirmar", f"¿Estás seguro de que deseas eliminar el coche con matrícula {matricula}?")
+			if respuesta: 
+				coche = self.lista_coches.buscar_coche(matricula)
+				if coche:
+					self.lista_coches.eliminar_coche(matricula)
+					self.resultado_text.insert(tk.END, f"Coche con matrícula {matricula} eliminado.\n")
+				else:
+					self.resultado_text.insert(tk.END, f"Error: No existe el coche con matrícula {matricula}.\n")
 			else:
-				self.resultado_text.insert(tk.END, f"Error: No existe el coche con matrícula {matricula}.\n")
+				self.resultado_text.insert(tk.END, "Eliminación cancelada por el usuario.\n")
 		else:
 			self.resultado_text.insert(tk.END, "Error: Debe ingresar una matrícula.\n")
 
@@ -101,8 +106,8 @@ class InterfazGrafica:
 			self.resultado_text.insert(tk.END, "No hay coches en la lista.\n")
 
 if __name__ == "__main__":
-	# Cambiar ttk.Tk por tk.Tk y aplicar el estilo con ttk.Style
-	root = tk.Tk()  # Ventana principal de tkinter
-	style = ttk.Style(theme="cosmo")  # Aplicar el tema "cosmo" de ttkbootstrap
+	root = tk.Tk() 
+	style = ttk.Style(theme="cosmo")  
 	app = InterfazGrafica(root)
 	root.mainloop()
+
