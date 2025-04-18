@@ -15,27 +15,27 @@ class InterfazGrafica:
 		# Campos de entrada
 		self.matricula_label = ttk.Label(root, text="Matrícula:", bootstyle="primary")
 		self.matricula_label.grid(row=0, column=0, padx=10, pady=5, sticky=W)
-		self.matricula_entry = ttk.Entry(root)  # Elimina bootstyle="rounded"
+		self.matricula_entry = ttk.Entry(root)
 		self.matricula_entry.grid(row=0, column=1, padx=10, pady=5)
 
 		self.marca_label = ttk.Label(root, text="Marca:", bootstyle="primary")
 		self.marca_label.grid(row=1, column=0, padx=10, pady=5, sticky=W)
-		self.marca_entry = ttk.Entry(root)  # Elimina bootstyle="rounded"
+		self.marca_entry = ttk.Entry(root)
 		self.marca_entry.grid(row=1, column=1, padx=10, pady=5)
 
 		self.modelo_label = ttk.Label(root, text="Modelo:", bootstyle="primary")
 		self.modelo_label.grid(row=2, column=0, padx=10, pady=5, sticky=W)
-		self.modelo_entry = ttk.Entry(root)  # Elimina bootstyle="rounded"
+		self.modelo_entry = ttk.Entry(root)
 		self.modelo_entry.grid(row=2, column=1, padx=10, pady=5)
 
 		self.color_label = ttk.Label(root, text="Color:", bootstyle="primary")
 		self.color_label.grid(row=3, column=0, padx=10, pady=5, sticky=W)
-		self.color_entry = ttk.Entry(root)  # Elimina bootstyle="rounded"
+		self.color_entry = ttk.Entry(root)
 		self.color_entry.grid(row=3, column=1, padx=10, pady=5)
 
 		self.tamanio_label = ttk.Label(root, text="Tamaño:", bootstyle="primary")
 		self.tamanio_label.grid(row=4, column=0, padx=10, pady=5, sticky=W)
-		self.tamanio_entry = ttk.Entry(root)  # Elimina bootstyle="rounded"
+		self.tamanio_entry = ttk.Entry(root)
 		self.tamanio_entry.grid(row=4, column=1, padx=10, pady=5)
 
 		# Botones
@@ -52,7 +52,7 @@ class InterfazGrafica:
 		self.mostrar_button.grid(row=6, column=1, padx=10, pady=10)
 
 		# Área de texto para mostrar resultados
-		self.resultado_text = tk.Text(root, height=10, width=40)  # Cambia ttk.Text a tk.Text y elimina bootstyle
+		self.resultado_text = tk.Text(root, height=10, width=40)
 		self.resultado_text.grid(row=7, column=0, columnspan=2, padx=10, pady=10)
 
 	def anadir_coche(self):
