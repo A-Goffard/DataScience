@@ -101,6 +101,8 @@ class InterfazGrafica:
 			self.resultado_text.insert(tk.END, "No hay coches en la lista.\n")
 
 if __name__ == "__main__":
-	root = ttk.Window(themename="cosmo")  # Ventana con tema moderno
+	# Cambiar ttk.Tk por tk.Tk y aplicar el estilo con ttk.Style
+	root = tk.Tk()  # Ventana principal de tkinter
+	style = ttk.Style(theme="cosmo")  # Aplicar el tema "cosmo" de ttkbootstrap
 	app = InterfazGrafica(root)
 	root.mainloop()
