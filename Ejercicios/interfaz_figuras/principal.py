@@ -92,7 +92,7 @@ class InterfazGrafica:
 		self.resultado_text.delete(1.0, tk.END)
 		if figuras:
 			for figura in figuras:
-				self.resultado_text.insert(tk.END, f"Id: {figura['id']}, Nombre: {figura['nombre']}, Lados: {figura['lados']}, Color: {figura['color']}\n")
+				self.resultado_text.insert(tk.END, f"Id: {figura[0]}, Nombre: {figura[1]}, Lados: {figura[2]}, Color: {figura[3]}\n")
 		else:
 			self.resultado_text.insert(tk.END, "No hay figuras en la lista.\n")
 

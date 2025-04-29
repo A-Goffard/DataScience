@@ -1,17 +1,17 @@
 class Figura:
 	def __init__(self, id, nombre, lados, color):
-		self._matricula = id
+		self._id = id
 		self._nombre = nombre
 		self._lados = lados
 		self._color = color
 
 	@property
 	def id(self):
-		return self._matricula
+		return self._id
 
 	@id.setter
-	def id(self, nueva_matricula):
-		self._matricula = nueva_matricula
+	def id(self, nuevo_id):
+		self._id = nuevo_id
 
 	@property
 	def nombre(self):

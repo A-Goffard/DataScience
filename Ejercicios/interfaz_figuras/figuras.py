@@ -29,14 +29,7 @@ class Figuras:
 				return False
 
 	def mostrar(self):
+		resultado = []
 		for figura in self.figuras:
-			print(f"id: {figura.id}, Nombre: {figura.nombre}, Lados: {figura.lados}, Color: {figura.color}")
-			return [
-			{
-				"id": figura.id,
-				"nombre": figura.nombre,
-				"lados": figura.lados,
-				"color": figura.color,
-			}
-			for figura in self.figuras
-		]
+			resultado.append((figura.id, figura.nombre, figura.lados, figura.color))
+		return resultado
