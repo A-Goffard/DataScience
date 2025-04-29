@@ -34,23 +34,3 @@ class TemaAmbiental:
     @relevancia.setter
     def relevancia(self, relevancia):
         self._relevancia = relevancia
-
-    def crear(self):
-        return f"Tema ambiental '{self.nombre}' creado exitosamente."
-
-    def editar(self, nombre=None, descripcion=None, relevancia=None):
-        if nombre:
-            self.nombre = nombre
-        if descripcion:
-            self.descripcion = descripcion
-        if relevancia:
-            self.relevancia = relevancia
-        return f"Tema ambiental '{self.nombre}' editado exitosamente."
-
-    def eliminar(self):
-        return f"Tema ambiental '{self.nombre}' eliminado."
-
-    def buscar(self, criterio):
-        if criterio in self.nombre or criterio in self.descripcion:
-            return f"Tema ambiental '{self.nombre}' coincide con la búsqueda."
-        return f"No se encontraron coincidencias en el tema ambiental '{self.nombre}'."

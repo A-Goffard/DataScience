@@ -31,9 +31,7 @@ class Figuras:
 	def mostrar(self):
 		for figura in self.figuras:
 			print(f"id: {figura.id}, Nombre: {figura.nombre}, Lados: {figura.lados}, Color: {figura.color}")
-
-	def obtener(self):
-		return [
+			return [
 			{
 				"id": figura.id,
 				"nombre": figura.nombre,

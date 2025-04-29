@@ -113,35 +113,3 @@ class Actividad:
     @modificaciones.setter
     def modificaciones(self, modificaciones):
         self._modificaciones = modificaciones
-
-    def registrar(self):
-        return f"Actividad '{self.nombre}' registrada exitosamente."
-
-    def editar(self, nombre=None, descripcion=None, responsable=None, duracion=None, coste_economico=None, coste_horas=None, facturacion=None, resultados=None, valoracion=None, modificaciones=None):
-        if nombre:
-            self.nombre = nombre
-        if descripcion:
-            self.descripcion = descripcion
-        if responsable:
-            self.responsable = responsable
-        if duracion:
-            self.duracion = duracion
-        if coste_economico:
-            self.coste_economico = coste_economico
-        if coste_horas:
-            self.coste_horas = coste_horas
-        if facturacion:
-            self.facturacion = facturacion
-        if resultados:
-            self.resultados = resultados
-        if valoracion:
-            self.valoracion = valoracion
-        if modificaciones:
-            self.modificaciones = modificaciones
-        return f"Actividad '{self.nombre}' editada exitosamente."
-
-    def eliminar(self):
-        return f"Actividad '{self.nombre}' eliminada."
-
-    def generar_reporte(self):
-        return f"Reporte generado para la actividad '{self.nombre}'."

@@ -11,12 +11,12 @@ class InterfazGrafica:
 		self.root = root
 		self.root.title("Gestión de Figuras")
 		self.root.geometry("335x440")
-		self.root.configure(bg="#ebdef0")  # Cambiar el color de fondo a rosa pálido
+		self.root.configure(bg="#ebdef0") 
 
 		# Campos de entrada
 		self.id_label = ttk.Label(root, text="Id:", bootstyle="info", background="#ebdef0")
 		self.id_label.grid(row=0, column=0, padx=10, pady=5, sticky=W)
-		self.id_entry = ttk.Entry(root)  # Elimina bootstyle="rounded"
+		self.id_entry = ttk.Entry(root)  
 		self.id_entry.grid(row=0, column=1, padx=10, pady=5)
 
 		self.marca_label = ttk.Label(root, text="Nombre:", bootstyle="info", background="#ebdef0")
@@ -31,7 +31,7 @@ class InterfazGrafica:
 
 		self.color_label = ttk.Label(root, text="Color:", bootstyle="info", background="#ebdef0")
 		self.color_label.grid(row=3, column=0, padx=10, pady=5, sticky=W)
-		self.color_entry = ttk.Entry(root)  # Elimina bootstyle="rounded"
+		self.color_entry = ttk.Entry(root)  
 		self.color_entry.grid(row=3, column=1, padx=10, pady=5)
 
 		# Botones
@@ -48,7 +48,7 @@ class InterfazGrafica:
 		self.mostrar_button.grid(row=6, column=1, padx=10, pady=10)
 
 		# Área de texto para mostrar resultados
-		self.resultado_text = tk.Text(root, height=10, width=50)  # Cambia ttk.Text a tk.Text y elimina bootstyle
+		self.resultado_text = tk.Text(root, height=10, width=50) 
 		self.resultado_text.grid(row=7, column=0, columnspan=2, padx=10, pady=10)
 
 	def agregar(self):
@@ -88,7 +88,7 @@ class InterfazGrafica:
 			self.resultado_text.insert(tk.END, "Error: Debe ingresar una Id.\n")
 
 	def mostrar(self):
-		figuras = self.figuras.obtener()
+		figuras = self.figuras.mostrar()
 		self.resultado_text.delete(1.0, tk.END)
 		if figuras:
 			for figura in figuras:
@@ -97,6 +97,6 @@ class InterfazGrafica:
 			self.resultado_text.insert(tk.END, "No hay figuras en la lista.\n")
 
 if __name__ == "__main__":
-	root = ttk.Window(themename="cosmo")  # Ventana con tema moderno
+	root = ttk.Window(themename="cosmo")  
 	app = InterfazGrafica(root)
 	root.mainloop()

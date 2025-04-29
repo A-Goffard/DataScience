@@ -34,23 +34,3 @@ class RecursoMultimedia:
     @fecha_subida.setter
     def fecha_subida(self, fecha_subida):
         self._fecha_subida = fecha_subida
-
-    def subir(self):
-        return f"Recurso multimedia '{self.titulo}' subido exitosamente."
-
-    def editar(self, tipo=None, titulo=None, fecha_subida=None):
-        if tipo:
-            self.tipo = tipo
-        if titulo:
-            self.titulo = titulo
-        if fecha_subida:
-            self.fecha_subida = fecha_subida
-        return f"Recurso multimedia '{self.titulo}' editado exitosamente."
-
-    def eliminar(self):
-        return f"Recurso multimedia '{self.titulo}' eliminado."
-
-    def buscar(self, criterio):
-        if criterio in self.titulo or criterio in self.tipo:
-            return f"Recurso multimedia '{self.titulo}' coincide con la búsqueda."
-        return f"No se encontraron coincidencias en el recurso multimedia '{self.titulo}'."

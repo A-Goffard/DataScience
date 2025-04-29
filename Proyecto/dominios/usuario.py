@@ -1,4 +1,4 @@
-from rol import ROLES
+from rol import Rol
 
 class Usuario:
 
@@ -107,12 +107,3 @@ class Usuario:
     @preferencias.setter
     def preferencias(self, preferencias):
         self.preferencias = preferencias
-
-    def realizar_tarea(self, tarea):
-        rol_obj = ROLES.get(self.rol)
-        if not rol_obj:
-            raise ValueError("Rol no válido")
-        if rol_obj.puede_realizar(tarea):
-            return f"Tarea '{tarea}' realizada por el rol {self.rol}."
-        else:
-            return f"Tarea '{tarea}' no permitida para el rol {self.rol}."

@@ -27,21 +27,3 @@ class Plantilla:
     @tipo.setter
     def tipo(self, tipo):
         self._tipo = tipo
-
-    def crear(self):
-        return f"Plantilla '{self.titulo}' creada exitosamente."
-
-    def editar(self, titulo=None, tipo=None, contenido_base=None):
-        if titulo:
-            self.titulo = titulo
-        if tipo:
-            self.tipo = tipo
-        if contenido_base:
-            self._contenido_base = contenido_base
-        return f"Plantilla '{self.titulo}' editada exitosamente."
-
-    def eliminar(self):
-        return f"Plantilla '{self.titulo}' eliminada."
-
-    def duplicar(self):
-        return f"Plantilla '{self.titulo}' duplicada exitosamente."

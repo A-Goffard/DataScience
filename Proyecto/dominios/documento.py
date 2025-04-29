@@ -50,28 +50,3 @@ class Documento:
     @tematica.setter
     def tematica(self, tematica):
         self._tematica = tematica
-
-    def subir(self):
-        return f"Documento '{self.titulo}' subido exitosamente."
-
-    def editar(self, titulo=None, descripcion=None, tipo=None, tematica=None):
-        if titulo:
-            self.titulo = titulo
-        if descripcion:
-            self.descripcion = descripcion
-        if tipo:
-            self.tipo = tipo
-        if tematica:
-            self.tematica = tematica
-        return f"Documento '{self.titulo}' editado exitosamente."
-
-    def eliminar(self):
-        return f"Documento '{self.titulo}' eliminado."
-
-    def buscar(self, palabra_clave):
-        if palabra_clave in self.titulo or palabra_clave in self.descripcion or palabra_clave in self.tematica:
-            return f"Documento '{self.titulo}' coincide con la búsqueda."
-        return f"No se encontraron coincidencias en el documento '{self.titulo}'."
-
-    def asociar_a_publicacion(self, publicacion):
-        return f"Documento '{self.titulo}' asociado a la publicación '{publicacion.titulo}'."
