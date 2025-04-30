@@ -50,3 +50,14 @@ class Documento:
     @tematica.setter
     def tematica(self, tematica):
         self._tematica = tematica
+
+    @staticmethod
+    def crear_documento(id, titulo, descripcion, fecha_subida, tipo, tematica):
+        return Documento(
+            id=id,
+            titulo=titulo,
+            descripcion=descripcion,
+            fecha_subida=fecha_subida,
+            tipo=tipo,
+            tematica=tematica
+        )

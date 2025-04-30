@@ -14,6 +14,24 @@ class Actividad:
         self._valoracion = valoracion
         self._modificaciones = modificaciones
 
+    @staticmethod
+    def crear_actividad(id, tipo, nombre, fecha_ejecucion, descripcion, responsable, duracion, coste_economico, coste_horas, facturacion, resultados, valoracion, modificaciones):
+        return Actividad(
+            id=id,
+            tipo=tipo,
+            nombre=nombre,
+            fecha_ejecucion=fecha_ejecucion,
+            descripcion=descripcion,
+            responsable=responsable,
+            duracion=duracion,
+            coste_economico=coste_economico,
+            coste_horas=coste_horas,
+            facturacion=facturacion,
+            resultados=resultados,
+            valoracion=valoracion,
+            modificaciones=modificaciones
+        )
+
     @property
     def id(self):
         return self._id

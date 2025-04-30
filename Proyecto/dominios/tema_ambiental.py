@@ -34,3 +34,14 @@ class TemaAmbiental:
     @relevancia.setter
     def relevancia(self, relevancia):
         self._relevancia = relevancia
+
+    @staticmethod
+    def crear_tema_ambiental(id, nombre, descripcion, relevancia, relacion_actividades, relacion_publicaciones):
+        return TemaAmbiental(
+            id=id,
+            nombre=nombre,
+            descripcion=descripcion,
+            relevancia=relevancia,
+            relacion_actividades=relacion_actividades,
+            relacion_publicaciones=relacion_publicaciones
+        )

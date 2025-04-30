@@ -68,3 +68,16 @@ class Publicacion:
     @palabras_clave.setter
     def palabras_clave(self, palabras_clave):
         self._palabras_clave = palabras_clave
+
+    @staticmethod
+    def crear_publicacion(id, titulo, contenido, autor, fecha_creacion, estado, tags, palabras_clave):
+        return Publicacion(
+            id=id,
+            titulo=titulo,
+            contenido=contenido,
+            autor=autor,
+            fecha_creacion=fecha_creacion,
+            estado=estado,
+            tags=tags,
+            palabras_clave=palabras_clave
+        )

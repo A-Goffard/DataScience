@@ -33,3 +33,13 @@ class Tag:
     @frecuencia_uso.setter
     def frecuencia_uso(self, frecuencia_uso):
         self._frecuencia_uso = frecuencia_uso
+
+    @staticmethod
+    def crear_tag(id, palabra_clave, categoria, frecuencia_uso, relaciones):
+        return Tag(
+            id=id,
+            palabra_clave=palabra_clave,
+            categoria=categoria,
+            frecuencia_uso=frecuencia_uso,
+            relaciones=relaciones
+        )

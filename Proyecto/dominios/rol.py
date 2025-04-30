@@ -19,4 +19,11 @@ class Rol:
     def tareas_permitidas(self, tareas_permitidas):
         self._tareas_permitidas = tareas_permitidas
 
+    @staticmethod
+    def crear_rol(nombre, tareas_permitidas):
+        return Rol(
+            nombre=nombre,
+            tareas_permitidas=tareas_permitidas
+        )
+
 

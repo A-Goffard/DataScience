@@ -27,3 +27,15 @@ class Plantilla:
     @tipo.setter
     def tipo(self, tipo):
         self._tipo = tipo
+
+    @staticmethod
+    def crear_plantilla(id, titulo, tipo, contenido_base, fecha_creacion, ultima_modificacion, relaciones):
+        return Plantilla(
+            id=id,
+            titulo=titulo,
+            tipo=tipo,
+            contenido_base=contenido_base,
+            fecha_creacion=fecha_creacion,
+            ultima_modificacion=ultima_modificacion,
+            relaciones=relaciones
+        )

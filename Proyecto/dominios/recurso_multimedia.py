@@ -1,7 +1,7 @@
 class RecursoMultimedia:
     def __init__(self, id, tipo, titulo, fecha_subida, autor, relaciones):
         self._id = id
-        self._tipo = tipo  # e.g., "imagen", "video", etc.
+        self._tipo = tipo
         self._titulo = titulo
         self._fecha_subida = fecha_subida
         self._autor = autor
@@ -34,3 +34,14 @@ class RecursoMultimedia:
     @fecha_subida.setter
     def fecha_subida(self, fecha_subida):
         self._fecha_subida = fecha_subida
+
+    @staticmethod
+    def crear_recurso_multimedia(id, tipo, url, descripcion, fecha_creacion, etiquetas):
+        return RecursoMultimedia(
+            id=id,
+            tipo=tipo,
+            url=url,
+            descripcion=descripcion,
+            fecha_creacion=fecha_creacion,
+            etiquetas=etiquetas
+        )

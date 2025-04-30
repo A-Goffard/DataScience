@@ -1,23 +1,31 @@
+from dominios.tags_palabras_clave import Tag
+
 class Tags:
     def __init__(self):
         self.lista_tags = []
 
-    def crear(self):
-        return f"Tag '{self.palabra_clave}' creado exitosamente."
+    def agregar_tag(self, tag: Tag):
+        self.lista_tags.append(tag)
+        return f"Tag '{tag.palabra_clave}' agregado exitosamente."
 
-    def editar(self, palabra_clave=None, categoria=None, frecuencia_uso=None):
-        if palabra_clave:
-            self.palabra_clave = palabra_clave
-        if categoria:
-            self.categoria = categoria
-        if frecuencia_uso:
-            self.frecuencia_uso = frecuencia_uso
-        return f"Tag '{self.palabra_clave}' editado exitosamente."
+    def modificar_tag(self, id_tag, **kwargs):
+        for tag in self.lista_tags:
+            if tag.id == id_tag:
+                for key, value in kwargs.items():
+                    if hasattr(tag, key):
+                        setattr(tag, key, value)
+                return f"Tag '{tag.palabra_clave}' modificado exitosamente."
+        return f"No se encontró el tag con ID '{id_tag}'."
 
-    def eliminar(self):
-        return f"Tag '{self.palabra_clave}' eliminado."
+    def buscar_tag(self, id_tag):
+        for tag in self.lista_tags:
+            if tag.id == id_tag:
+                return tag
+        return None
 
-    def buscar(self, criterio):
-        if criterio in self.palabra_clave or criterio in self.categoria:
-            return f"Tag '{self.palabra_clave}' coincide con la búsqueda."
-        return f"No se encontraron coincidencias en el tag '{self.palabra_clave}'."
+    def eliminar_tag(self, id_tag):
+        for tag in self.lista_tags:
+            if tag.id == id_tag:
+                self.lista_tags.remove(tag)
+                return f"Tag '{tag.palabra_clave}' eliminado."
+        return f"No se encontró el tag con ID '{id_tag}'."
