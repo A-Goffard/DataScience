@@ -4,7 +4,7 @@ class Documento:
         self._titulo = titulo
         self._descripcion = descripcion
         self._fecha_subida = fecha_subida
-        self._tipo = tipo  # e.g., "PDF", "Word", etc.
+        self._tipo = tipo
         self._tematica = tematica
 
     @property
