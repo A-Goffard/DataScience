@@ -154,3 +154,12 @@ class Factura:
     @irpf.setter
     def irpf(self, irpf):
         self._irpf = irpf
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Tipo: {self.tipo}, Nombre: {self.nombre}, Dirección: {self.direccion}, "
+            f"NIF: {self.nif}, Fecha facturación: {self.fecha_facturacion}, Fecha vencimiento: {self.fecha_vencimiento}, "
+            f"Concepto: {self.concepto}, Responsable: {self.responsable}, IVA: {self.iva}, "
+            f"Coste total: {self.coste_total}, Base imponible: {self.base_imponible}, "
+            f"Número factura: {self.numero_factura}, Tipo pago: {self.tipo_pago}, IRPF: {self.irpf}"
+        )

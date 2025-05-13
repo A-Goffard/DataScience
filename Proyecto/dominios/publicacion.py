@@ -5,7 +5,7 @@ class Publicacion:
         self._contenido = contenido
         self._autor = autor
         self._fecha_creacion = fecha_creacion
-        self._estado = estado  # Possible values: "borrador", "publicado", "guardado"
+        self._estado = estado
         self._tags = tags
         self._palabras_clave = palabras_clave
 
@@ -80,4 +80,11 @@ class Publicacion:
             estado=estado,
             tags=tags,
             palabras_clave=palabras_clave
+        )
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Título: {self.titulo}, Contenido: {self.contenido}, "
+            f"Autor: {self.autor}, Fecha creación: {self.fecha_creacion}, Estado: {self.estado}, "
+            f"Tags: {self.tags}, Palabras clave: {self.palabras_clave}"
         )

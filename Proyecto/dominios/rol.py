@@ -26,4 +26,7 @@ class Rol:
             tareas_permitidas=tareas_permitidas
         )
 
+    def __str__(self):
+        return f"Nombre: {self.nombre}, Tareas permitidas: {self.tareas_permitidas}"
+
 

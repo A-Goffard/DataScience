@@ -45,3 +45,9 @@ class RecursoMultimedia:
             fecha_creacion=fecha_creacion,
             etiquetas=etiquetas
         )
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Tipo: {self.tipo}, Título: {self.titulo}, "
+            f"Fecha subida: {self.fecha_subida}, Autor: {self._autor}, Relaciones: {self._relaciones}"
+        )

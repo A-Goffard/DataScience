@@ -3,11 +3,14 @@ import tkinter as tk
 from tkinter import messagebox, simpledialog
 from usuario import Usuario
 from usuarios import GestorUsuarios
-s
-if os.path.exists("usuarios.txt"):
-    print("El archivo usuarios.txt existe en:", os.path.abspath("usuarios.txt"))
+
+ruta_archivo = os.path.join(os.path.dirname(os.path.abspath(__file__)), "usuarios.txt")
+if os.path.exists(ruta_archivo):
+    print("El archivo usuarios.txt existe en:", ruta_archivo)
 else:
     print("El archivo usuarios.txt no existe.")
+
+gestor = GestorUsuarios(ruta_archivo)
 
 def iniciar_sesion():
     usuario_input = entry_usuario.get()
@@ -58,5 +61,4 @@ btn_login = tk.Button(ventana, text="Iniciar Sesión", command=iniciar_sesion)
 btn_login.pack(pady=10)
 
 # Inicializar gestor y ejecutar
-gestor = GestorUsuarios("usuarios.txt")
 ventana.mainloop()

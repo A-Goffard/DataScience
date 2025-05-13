@@ -2,7 +2,7 @@ class Tag:
     def __init__(self, id, palabra_clave, categoria, frecuencia_uso, relaciones):
         self._id = id
         self._palabra_clave = palabra_clave
-        self._categoria = categoria  # e.g., "temática", "actividad", etc.
+        self._categoria = categoria
         self._frecuencia_uso = frecuencia_uso
         self._relaciones = relaciones
 
@@ -42,4 +42,10 @@ class Tag:
             categoria=categoria,
             frecuencia_uso=frecuencia_uso,
             relaciones=relaciones
+        )
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Palabra clave: {self.palabra_clave}, Categoría: {self.categoria}, "
+            f"Frecuencia de uso: {self.frecuencia_uso}, Relaciones: {self._relaciones}"
         )

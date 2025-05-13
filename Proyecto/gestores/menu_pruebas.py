@@ -1,4 +1,10 @@
+import sys
+import os
+from importlib import import_module
 from base_gestor import BaseGestor
+
+# Añadir el directorio raíz del proyecto al sys.path para imports relativos
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 class Item:
     def __init__(self, id, nombre, descripcion):
@@ -12,54 +18,54 @@ class Item:
 class Gestor(BaseGestor):
     pass
 
-def menu():
-    gestor = Gestor()
+def solicitar_atributos(clase, opcional=False):
+    atributos = {}
+    parametros = clase.__init__.__code__.co_varnames[1:clase.__init__.__code__.co_argcount]
+    for atributo in parametros:
+        valor = input(f"Ingrese {atributo}{' (opcional)' if opcional else ''}: ")
+        if valor or not opcional:
+            atributos[atributo] = valor
+    return atributos
+
+def menu_pruebas(gestor, clase_item):
     while True:
-        print("\nMenú de Pruebas")
-        print("1. Agregar Item")
-        print("2. Modificar Item")
-        print("3. Buscar Item")
-        print("4. Eliminar Item")
+        print(f"\nMenú de Pruebas para {clase_item.__name__}")
+        print("1. Agregar")
+        print("2. Modificar")
+        print("3. Buscar")
+        print("4. Eliminar")
         print("5. Mostrar Todos")
         print("6. Salir")
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            id = input("Ingrese el ID: ")
-            nombre = input("Ingrese el nombre: ")
-            descripcion = input("Ingrese la descripción: ")
-            item = Item(id, nombre, descripcion)
+            atributos = solicitar_atributos(clase_item)
+            item = clase_item(**atributos)
             print(gestor.agregar(item))
 
         elif opcion == "2":
-            id = input("Ingrese el ID del item a modificar: ")
-            nombre = input("Ingrese el nuevo nombre (deje vacío para no modificar): ")
-            descripcion = input("Ingrese la nueva descripción (deje vacío para no modificar): ")
-            cambios = {}
-            if nombre:
-                cambios["nombre"] = nombre
-            if descripcion:
-                cambios["descripcion"] = descripcion
-            print(gestor.modificar(id, **cambios))
+            id_item = input("Ingrese el ID del elemento a modificar: ")
+            cambios = solicitar_atributos(clase_item, opcional=True)
+            print(gestor.modificar(id_item, **cambios))
 
         elif opcion == "3":
-            id = input("Ingrese el ID del item a buscar: ")
-            item = gestor.buscar(id)
+            id_item = input("Ingrese el ID del elemento a buscar: ")
+            item = gestor.buscar(id_item)
             if item:
                 print(item)
             else:
-                print("Item no encontrado.")
+                print(f"{clase_item.__name__} no encontrado.")
 
         elif opcion == "4":
-            id = input("Ingrese el ID del item a eliminar: ")
-            print(gestor.eliminar(id))
+            id_item = input("Ingrese el ID del elemento a eliminar: ")
+            print(gestor.eliminar(id_item))
 
         elif opcion == "5":
             if gestor.lista:
                 for item in gestor.lista:
                     print(item)
             else:
-                print("No hay items en la lista.")
+                print(f"No hay elementos en {clase_item.__name__}.")
 
         elif opcion == "6":
             print("Saliendo del programa...")
@@ -69,4 +75,17 @@ def menu():
             print("Opción no válida. Intente nuevamente.")
 
 if __name__ == "__main__":
-    menu()
+    # Ejemplo: Cambia estos imports para probar otras clases y gestores
+    # from gestores.usuarios import Usuarios
+    # from dominios.usuario import Usuario
+    
+    # gestor = Usuarios()
+    # clase = Usuario
+    
+    from gestores.publicaciones import Publicaciones
+    from dominios.publicacion import Publicacion
+
+    gestor = Publicaciones()
+    clase = Publicacion
+
+    menu_pruebas(gestor, clase)

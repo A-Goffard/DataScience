@@ -45,3 +45,10 @@ class TemaAmbiental:
             relacion_actividades=relacion_actividades,
             relacion_publicaciones=relacion_publicaciones
         )
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Nombre: {self.nombre}, Descripción: {self.descripcion}, "
+            f"Relevancia: {self.relevancia}, Relación actividades: {self._relacion_actividades}, "
+            f"Relación publicaciones: {self._relacion_publicaciones}"
+        )

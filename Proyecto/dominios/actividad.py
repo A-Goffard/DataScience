@@ -131,3 +131,11 @@ class Actividad:
     @modificaciones.setter
     def modificaciones(self, modificaciones):
         self._modificaciones = modificaciones
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Tipo: {self.tipo}, Nombre: {self.nombre}, Fecha ejecución: {self.fecha_ejecucion}, "
+            f"Descripción: {self.descripcion}, Responsable: {self.responsable}, Duración: {self.duracion}, "
+            f"Coste económico: {self.coste_economico}, Coste horas: {self.coste_horas}, Facturación: {self.facturacion}, "
+            f"Resultados: {self.resultados}, Valoración: {self.valoracion}, Modificaciones: {self.modificaciones}"
+        )

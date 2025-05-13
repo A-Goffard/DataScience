@@ -71,3 +71,9 @@ class Participante:
     @actividades.setter
     def actividades(self, actividades):
         self._actividades = actividades
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Nombre: {self.nombre}, Apellido: {self.apellido}, "
+            f"Correo: {self.correo}, Teléfono: {self.telefono}, Rol: {self.rol}, Actividades: {self.actividades}"
+        )

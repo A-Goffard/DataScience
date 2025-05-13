@@ -1,3 +1,1 @@
-ainara;Ainara;De Miguel;1977;1234
-joxe;Joxe;Zabaleta;1988;pass1234
-luciag;Lucía;Gómez;1992;mypass789
+Txipi;Josefina;Mendia;1985;1111

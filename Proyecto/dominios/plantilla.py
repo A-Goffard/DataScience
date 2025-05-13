@@ -2,7 +2,7 @@ class Plantilla:
     def __init__(self, id, titulo, tipo, contenido_base, fecha_creacion, ultima_modificacion, relaciones):
         self._id = id
         self._titulo = titulo
-        self._tipo = tipo  # e.g., "publicación", "reporte", etc.
+        self._tipo = tipo
         self._contenido_base = contenido_base
         self._fecha_creacion = fecha_creacion
         self._ultima_modificacion = ultima_modificacion
@@ -38,4 +38,11 @@ class Plantilla:
             fecha_creacion=fecha_creacion,
             ultima_modificacion=ultima_modificacion,
             relaciones=relaciones
+        )
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Título: {self.titulo}, Tipo: {self.tipo}, "
+            f"Contenido base: {self._contenido_base}, Fecha creación: {self._fecha_creacion}, "
+            f"Última modificación: {self._ultima_modificacion}, Relaciones: {self._relaciones}"
         )

@@ -61,3 +61,9 @@ class Documento:
             tipo=tipo,
             tematica=tematica
         )
+
+    def __str__(self):
+        return (
+            f"ID: {self.id}, Título: {self.titulo}, Descripción: {self.descripcion}, "
+            f"Fecha subida: {self.fecha_subida}, Tipo: {self.tipo}, Temática: {self.tematica}"
+        )
