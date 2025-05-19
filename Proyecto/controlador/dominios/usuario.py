@@ -1,11 +1,9 @@
-class Usuario:
+from persona import Persona
+
+class Usuario(Persona):
 
     def __init__(self, id, nombre, apellido, correo, telefono, fecha_nacimiento, direccion, dni, cp, poblacion, pais, rol, preferencias, password):
-        self._id = id
-        self._nombre = nombre
-        self._apellido = apellido
-        self._correo = correo
-        self._telefono = telefono
+        super().__init__(id, nombre, apellido, correo, telefono)
         self._fecha_nacimiento = fecha_nacimiento
         self._direccion = direccion
         self._dni = dni
@@ -146,6 +144,9 @@ class Usuario:
     def password(self, password):
         self._password = password
 
+    def get_tipo(self) -> str:
+        return "Usuario"
+    
     def __str__(self):
         return (
             f"ID: {self.id}, Nombre: {self.nombre}, Apellido: {self.apellido}, "
