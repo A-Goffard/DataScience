@@ -39,3 +39,13 @@ class Fruta:
 
     def __str__(self):
         return f"ID: {self._id}, Nombre: {self._nombre}, Color: {self._color}, Sabor: {self._sabor}"
+
+    def __eq__(self, other):
+        if not isinstance(other, Fruta):
+            return False
+        return (
+            self._id == other._id and
+            self._nombre == other._nombre and
+            self._color == other._color and
+            self._sabor == other._sabor
+        )
